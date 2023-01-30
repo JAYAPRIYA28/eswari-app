@@ -34,7 +34,7 @@ function SignIn() {
   const signinData = async ()=>{
     try{
     
-      axios.get(`http://localhost:3002/signin/${email}/${password}`)
+      axios.get(`/signin/${email}/${password}`)
            .then(res =>{
             if(res.data.data!==undefined){
               if(email === res.data.data.email ){

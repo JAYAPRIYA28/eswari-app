@@ -23,8 +23,8 @@ function PVC() {
 
     const handleClick = async() => {
         try{
-            axios.post("http://localhost:3002/pvc",{
-                name:"PVC",
+            axios.post("/pvc",{
+                name:name,
                 item_name:item_name,
                 first_inches:first_inches,
                 cost:cost,
@@ -44,7 +44,7 @@ function PVC() {
 
     const dataFetch = async() => {
         try{
-            const response = await fetch("http://localhost:3002/pvcother")
+            const response = await fetch("/pvcother")
             const responseData = await response.json();
 
             setData(responseData.data)
@@ -68,8 +68,8 @@ function PVC() {
         }
        
         
-       console.log(e.target.value)
-      const res = await fetch(`http://localhost:3002/pvcgetSecific/${e.target.value}`);
+      //  console.log(e.target.value)
+      const res = await fetch(`/pvcgetSecific/${e.target.value}`);
       const content = await res.json();
       setSvalue(content.data);
       
@@ -78,12 +78,12 @@ function PVC() {
     
     }
 
-    console.log(sValue)
+    // console.log(sValue)
     
   
     
 
-    console.log(data)
+    // console.log(data)
   return (
     <div>
     <Navbar/>
@@ -137,7 +137,7 @@ function PVC() {
                  sarr.splice(k, 1);
                 var sl_no = i+1;
                 console.log(sl_no)
-              axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+              axios.delete(`/item/${data.item_name}/${sl_no}`)
               
               
          .then(res=>{
@@ -158,7 +158,7 @@ function PVC() {
        }
        if(flag===0){
          sarr.push(i)
-         axios.post("http://localhost:3002/item/itempost",{
+         axios.post("/item/itempost",{
            first_inches:data.first_inches,
            item_name:data.item_name,
            cost:data.cost,
@@ -200,7 +200,7 @@ function PVC() {
                  sarr.splice(k, 1);
                 var sl_no = i+1;
                 console.log(sl_no)
-              axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+              axios.delete(`/item/${data.item_name}/${sl_no}`)
               
               
          .then(res=>{
@@ -221,7 +221,7 @@ function PVC() {
        }
        if(flag===0){
          sarr.push(i)
-         axios.post("http://localhost:3002/item/itempost",{
+         axios.post("/item/itempost",{
            first_inches:data.first_inches,
            item_name:data.item_name,
            cost:data.cost,

@@ -1,6 +1,6 @@
 create extension if not exists "uuid-ossp";
 
-CREATE TABLE billing(
+CREATE TABLE finOlex(
     sl_no int, 
     item_name varchar(255),
     first_inches varchar(255),
@@ -103,7 +103,7 @@ name varchar(255)
 );
 
 CREATE TABLE History(
-    user_name varchar(255)
+    user_name varchar(255),
     item_name varchar(255), 
     cost float8, 
      Qty int, 

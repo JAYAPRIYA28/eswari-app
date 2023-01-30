@@ -44,7 +44,7 @@ function Billing() {
       const unique_id = e.target.name;
       console.log(change)
 
-       axios.post(`http://localhost:3002/item_post/${change}/${unique_id}`)
+       axios.post(`/item_post/${change}/${unique_id}`)
        window.location.reload(true)
        billingDataFetch()
 
@@ -57,7 +57,7 @@ const handlePercenSumbit = async(e)=>{
   try{
     const unique_id = e.target.name;
 
-    axios.post(`http://localhost:3002/item_percentage/${percentage}/${unique_id}`)
+    axios.post(`/item_percentage/${percentage}/${unique_id}`)
     window.location.reload(true)
     billingDataFetch()
   }catch(err){
@@ -71,7 +71,7 @@ const handlePercenSumbit = async(e)=>{
   const handleEntry = async(e) => {
     try{
       const unique_id = e.target.name;
-      axios.post(`http://localhost:3002/update_entry/${entry}/${unique_id}`)
+      axios.post(`/update_entry/${entry}/${unique_id}`)
       billingDataFetch()
       window.location.reload(true)
     }catch(err){
@@ -84,10 +84,10 @@ const handlePercenSumbit = async(e)=>{
 
   const billingDataFetch = async () => {
     try{
-      const response = await fetch("http://localhost:3002/item/itempost");
+      const response = await fetch("/item/itempost");
       const data = await response.json();
 
-      const resp = await fetch("http://localhost:3002/total_cost");
+      const resp = await fetch("/total_cost");
       const resp_data = await resp.json();
 
       setTotal(resp_data.data.sum)
@@ -185,7 +185,7 @@ const handlePercenSumbit = async(e)=>{
                         <p className='ml-20 w-14'>{data.total_cost}</p>
 
                         <DeleteIcon  src={cross_simple} name={data.unique_id} onClick={()=>{
-                            axios.delete(`http://localhost:3002/delete_item/${data.unique_id}`)
+                            axios.delete(`/delete_item/${data.unique_id}`)
                             window.location.reload(true)
                         }} className="w-5 h-5 ml-8 " alt='cross_simple'/>
                         
@@ -224,7 +224,7 @@ const handlePercenSumbit = async(e)=>{
         setQty(e.target.value)
       }}></input>
       <button className='ml-10 bg-sky-900 text-white  w-32   h-10  border-solid rounded-xl border-4 border-light-blue-500 text-lg  opacity-100' onClick={()=>{
-         axios.post("http://localhost:3002/datapost",{
+         axios.post("/datapost",{
           bname:bname,
           pname:pname,
           mm:mm,

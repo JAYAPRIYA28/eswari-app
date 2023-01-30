@@ -23,7 +23,7 @@ function Other() {
 
     const handleClick = async() => {
         try{
-            axios.post("http://localhost:3002/other",{
+            axios.post("/other",{
                 name:name,
                 item_name:item_name,
                 first_inches:first_inches,
@@ -44,7 +44,7 @@ function Other() {
 
     const dataFetch = async() => {
         try{
-            const response = await fetch("http://localhost:3002/getother")
+            const response = await fetch("/getother")
             const responseData = await response.json();
 
             setData(responseData.data)
@@ -69,7 +69,7 @@ function Other() {
        
         
        console.log(e.target.value)
-      const res = await fetch(`http://localhost:3002/getSecific/${e.target.value}`);
+      const res = await fetch(`/getSecific/${e.target.value}`);
       const content = await res.json();
       setSvalue(content.data);
       
@@ -137,7 +137,7 @@ function Other() {
                  sarr.splice(k, 1);
                 var sl_no = i+1;
                 console.log(sl_no)
-              axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+              axios.delete(`/item/${data.item_name}/${sl_no}`)
               
               
          .then(res=>{
@@ -158,7 +158,7 @@ function Other() {
        }
        if(flag===0){
          sarr.push(i)
-         axios.post("http://localhost:3002/item/itempost",{
+         axios.post("/item/itempost",{
            first_inches:data.first_inches,
            item_name:data.item_name,
            cost:data.cost,
@@ -200,7 +200,7 @@ function Other() {
                  sarr.splice(k, 1);
                 var sl_no = i+1;
                 console.log(sl_no)
-              axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+              axios.delete(`/item/${data.item_name}/${sl_no}`)
               
               
          .then(res=>{
@@ -221,7 +221,7 @@ function Other() {
        }
        if(flag===0){
          sarr.push(i)
-         axios.post("http://localhost:3002/item/itempost",{
+         axios.post("/item/itempost",{
            first_inches:data.first_inches,
            item_name:data.item_name,
            cost:data.cost,

@@ -1,14 +1,37 @@
 const express = require("express");
 const db = require("./db");
 
+require("dotenv").config();
+
+
 const cors = require("cors");
 const { default: axios } = require("axios");
-const app = express();
+const path = require("path");
 
+const app = express();
+const PORT = process.env.PORT || 3002;
+
+
+//process.env.PORT
 
 app.use(cors());
 
 app.use(express.json());
+
+// app.use(express.static(path.join(__dirname,"client/build")));
+
+app.use(express.static("./client/build"))
+
+// if(process.env.NODE_ENV === "production"){
+
+//     app.use(express.static(path.join(__dirname,"client/build")));
+// }
+
+// console.log(__dirname);
+
+// console.log(path.join(__dirname,"client/build"));
+
+
 
 app.get("/" , async function(req,res){
     try{
@@ -729,9 +752,9 @@ app.get("/pvcgetSecific/:nameitem", async function(req,res){
 })
 
 
-const port = 3002;
-app.listen(port, ()=>{
-    console.log(`server is up and listening on port ${port}`);
+
+app.listen(PORT, ()=>{
+    console.log(`server is up and listening on port ${PORT}`);
 })
 
 

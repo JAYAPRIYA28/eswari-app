@@ -32,10 +32,10 @@ function CheckOut() {
 
   const billingDataFetch = async() => {
     try{
-     const response = await fetch("http://localhost:3002/item/itempost")
+     const response = await fetch("/item/itempost")
      const responseData = await response.json();
      setData(responseData.data) 
-     const resp = await fetch("http://localhost:3002/total_cost");
+     const resp = await fetch("/total_cost");
      const resp_data = await resp.json();
      setWord(converter.toWords(resp_data.data.sum))
      setTotal(resp_data.data.sum)
@@ -71,7 +71,7 @@ useEffect(()=>{
         
       })
       console.log(arr)
-          axios.post("http://localhost:3002/history", {
+          axios.post("/history", {
             qty:qty,
             cost:total,
             date:date,
@@ -82,7 +82,7 @@ useEffect(()=>{
             console.log(res.data)
           })
          
-           axios.delete("http://localhost:3002/historyDelete")
+           axios.delete("/historyDelete")
           
     }catch(err){
       console.log(err)

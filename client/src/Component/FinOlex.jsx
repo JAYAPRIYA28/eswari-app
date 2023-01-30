@@ -212,7 +212,7 @@ const handleEntry = async(e) =>{
     console.log(unique_id)
     const  editChange = editCost;
     
-     axios.post(`http://localhost:3002/item_change/${editChange}/${unique_id}`)
+     axios.post(`/item_change/${editChange}/${unique_id}`)
      window.location.reload(true)
    dataFetch()
   }catch(err){
@@ -225,129 +225,129 @@ const handleEntry = async(e) =>{
   try{
    
 
-   const couplerResponse = await fetch("http://localhost:3002/coupler");
+   const couplerResponse = await fetch("/coupler");
    const couplerData = await couplerResponse.json();
    //console.log(couplerData.data);
    setDataCoupler(couplerData.data);
 
-   const elbowResponse = await fetch("http://localhost:3002/elbow");
+   const elbowResponse = await fetch("/elbow");
    const elbowData = await elbowResponse.json();
    setDataElbow(elbowData.data);
 
-   const endcapResponse = await fetch("http://localhost:3002/endcap");
+   const endcapResponse = await fetch("/endcap");
    const endcapData = await endcapResponse.json();
 
    setEndcap(endcapData.data)
 
-   const theendcapResponse = await fetch("http://localhost:3002/theendcap");
+   const theendcapResponse = await fetch("/theendcap");
    const theendcapData = await theendcapResponse.json();
 
    setTheendcap(theendcapData.data)
 
-   const TgelbowResponse = await fetch("http://localhost:3002/10kgelbow");
+   const TgelbowResponse = await fetch("/10kgelbow");
    const TgelbowData = await TgelbowResponse.json();
 
    setTkgelbow(TgelbowData.data)
 
-   const FTAResponse = await fetch("http://localhost:3002/fta");
+   const FTAResponse = await fetch("/fta");
    const FTAData = await FTAResponse.json();
 
    setFTA(FTAData.data)
 
-   const MTAResponse = await fetch("http://localhost:3002/mta");
+   const MTAResponse = await fetch("/mta");
    const MTAData = await MTAResponse.json();
 
    setMTA(MTAData.data)
 
-   const serviceResponse = await fetch("http://localhost:3002/service");
+   const serviceResponse = await fetch("/service");
    const serviceData = await serviceResponse.json();
 
    setService(serviceData.data)
 
-   const teeResponse = await fetch("http://localhost:3002/tee");
+   const teeResponse = await fetch("/tee");
    const teeData = await teeResponse.json();
 
    setTEE(teeData.data)
 
-   const tgResponse = await fetch("http://localhost:3002/10kgtee");
+   const tgResponse = await fetch("/10kgtee");
    const tgData = await tgResponse.json();
 
    settgTEE(tgData.data)
 
-   const tailResponse = await fetch("http://localhost:3002/tail");
+   const tailResponse = await fetch("/tail");
    const tailData = await tailResponse.json();
 
    setTail(tailData.data)
 
-   const ballResponse = await fetch("http://localhost:3002/ball");
+   const ballResponse = await fetch("/ball");
    const ballData = await ballResponse.json();
 
    setBall(ballData.data)
 
-   const elbowfResponse = await fetch("http://localhost:3002/elbow45");
+   const elbowfResponse = await fetch("/elbow45");
    const elbowfData = await elbowfResponse.json();
 
    setFelbow(elbowfData.data)
 
-   const elbowtResponse = await fetch("http://localhost:3002/thread");
+   const elbowtResponse = await fetch("/thread");
    const elbowtData = await elbowtResponse.json();
 
    setTelbow(elbowtData.data)
 
-   const redbResponse = await fetch("http://localhost:3002/redbush");
+   const redbResponse = await fetch("/redbush");
    const redbData = await redbResponse.json();
 
    setRedb(redbData.data)
 
-   const reducerResponse = await fetch("http://localhost:3002/reducer");
+   const reducerResponse = await fetch("/reducer");
    const reducerData = await reducerResponse.json();
 
    setReducer(reducerData.data)
 
-   const redtResponse = await fetch("http://localhost:3002/redtee");
+   const redtResponse = await fetch("/redtee");
    const redtData = await redtResponse.json();
 
    setRedt(redtData.data)
 
-   const redfResponse = await fetch("http://localhost:3002/redfta");
+   const redfResponse = await fetch("/redfta");
    const redfData = await redfResponse.json();
 
    setRedf(redfData.data)
 
-   const redeResponse = await fetch("http://localhost:3002/redelbow");
+   const redeResponse = await fetch("/redelbow");
    const redeData = await redeResponse.json();
 
    setRede(redeData.data)
 
 
-   const brassfResponse = await fetch("http://localhost:3002/brassfta");
+   const brassfResponse = await fetch("/brassfta");
    const brassfData = await brassfResponse.json();
 
    setBrassf(brassfData.data)
 
 
-   const brasstResponse = await fetch("http://localhost:3002/brasstee");
+   const brasstResponse = await fetch("/brasstee");
    const brasstData = await brasstResponse.json();
 
    setBrasst(brasstData.data)
 
-   const brasseResponse = await fetch("http://localhost:3002/brasselbow");
+   const brasseResponse = await fetch("/brasselbow");
    const brasseData = await brasseResponse.json();
 
    setBrasse(brasseData.data)
 
-   const redmResponse = await fetch("http://localhost:3002/redmta");
+   const redmResponse = await fetch("/redmta");
    const redmData = await redmResponse.json();
 
    setRedm(redmData.data)
 
-   const resp = await fetch("http://localhost:3002/check");
+   const resp = await fetch("/check");
    const respData = await resp.json();
 
    setCheck(respData.data)
 
 
-   const search = await fetch("http://localhost:3002/search");
+   const search = await fetch("/search");
    const searchData = await search.json();
 
    setsData(searchData.data)
@@ -390,7 +390,7 @@ const handleSubmit = async(e)=> {
    
       
      setX(e.target.value)
-  const res = await fetch(`http://localhost:3002/itemName/${e.target.value}`);
+  const res = await fetch(`/itemName/${e.target.value}`);
   const content = await res.json();
   setSvalue(content.data);
   
@@ -612,7 +612,7 @@ const handleAddCoupler = ()=> {
                   sarr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -633,7 +633,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           sarr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -706,7 +706,7 @@ const handleAddCoupler = ()=> {
                  Esarr.splice(k, 1);
                 var sl_no = i+1;
                 console.log(sl_no)
-              axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+              axios.delete(`/item/${data.item_name}/${sl_no}`)
               
               
          .then(res=>{
@@ -727,7 +727,7 @@ const handleAddCoupler = ()=> {
        }
        if(flag===0){
          Esarr.push(i)
-         axios.post("http://localhost:3002/item/itempost",{
+         axios.post("/item/itempost",{
            first_inches:data.first_inches,
            item_name:data.item_name,
            mm:data.mm,
@@ -776,7 +776,7 @@ const handleAddCoupler = ()=> {
                   arr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -797,7 +797,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           arr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -840,7 +840,7 @@ const handleAddCoupler = ()=> {
     setCouplerCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="COUPLER" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:CouplerCost ,
       inches:CouplerInches
@@ -906,7 +906,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -927,7 +927,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -962,7 +962,7 @@ const handleAddCoupler = ()=> {
     setElbowCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="ELBOW" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:elbowCost ,
       inches:elbowInches
@@ -1027,7 +1027,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1048,7 +1048,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1083,7 +1083,7 @@ const handleAddCoupler = ()=> {
     setEndcapCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="END CAP" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:EndcapCost ,
       inches:EndcapInches
@@ -1146,7 +1146,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1167,7 +1167,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1202,7 +1202,7 @@ const handleAddCoupler = ()=> {
     setTheEndcapCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="THE END CAP" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:TheEndcapCost ,
       inches:TheEndcapInches
@@ -1266,7 +1266,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1287,7 +1287,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1322,7 +1322,7 @@ const handleAddCoupler = ()=> {
     setTkgelbowCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="10KG ELBOW" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:TkgelbowCost ,
       inches:TkgelbowInches
@@ -1385,7 +1385,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1406,7 +1406,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1441,7 +1441,7 @@ const handleAddCoupler = ()=> {
     setFTACost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="FTA" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:FTACost ,
       inches:FTAInches
@@ -1503,7 +1503,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1524,7 +1524,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1559,7 +1559,7 @@ const handleAddCoupler = ()=> {
     setMTACost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="MTA" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:MTACost ,
       inches:MTAInches
@@ -1622,7 +1622,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1643,7 +1643,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1678,7 +1678,7 @@ const handleAddCoupler = ()=> {
     setServiceCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="SERVICE SADDLE" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:serviceCost ,
       inches:serviceInches
@@ -1740,7 +1740,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1761,7 +1761,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1796,7 +1796,7 @@ const handleAddCoupler = ()=> {
     setTEECost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="TEE" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:TEECost ,
       inches:TEEInches
@@ -1859,7 +1859,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1880,7 +1880,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -1915,7 +1915,7 @@ const handleAddCoupler = ()=> {
     settgTEECost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="10KG TEE" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:tgTEECost ,
       inches:tgTEEInches
@@ -1978,7 +1978,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -1999,7 +1999,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2034,7 +2034,7 @@ const handleAddCoupler = ()=> {
     setTailCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="TAIL PIECE" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:tailCost ,
       inches:tailInches
@@ -2097,7 +2097,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2118,7 +2118,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2153,7 +2153,7 @@ const handleAddCoupler = ()=> {
     settgBallCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="BALL VALVE" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:ballCost ,
       inches:ballInches
@@ -2216,7 +2216,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2237,7 +2237,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2272,7 +2272,7 @@ const handleAddCoupler = ()=> {
     setFelbowCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="ELBOW 45" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:felbowCost ,
       inches:felbowInches
@@ -2335,7 +2335,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2356,7 +2356,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2391,7 +2391,7 @@ const handleAddCoupler = ()=> {
     setTelbowCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="THREAD ELBOW" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:telbowCost ,
       inches:telbowInches
@@ -2454,7 +2454,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2475,7 +2475,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2510,7 +2510,7 @@ const handleAddCoupler = ()=> {
     setReducerCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="REDUCER" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:reducerCost ,
       inches:reducerInches
@@ -2573,7 +2573,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2594,7 +2594,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2629,7 +2629,7 @@ const handleAddCoupler = ()=> {
     setRedbCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="RED BUSH" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:redbCost ,
       inches:redbInches
@@ -2692,7 +2692,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2713,7 +2713,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2748,7 +2748,7 @@ const handleAddCoupler = ()=> {
     setRedtCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="RED TEE" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:redtCost ,
       inches:redtInches
@@ -2811,7 +2811,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2832,7 +2832,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2867,7 +2867,7 @@ const handleAddCoupler = ()=> {
     setRedfCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="RED FTA" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:redfCost ,
       inches:redfInches
@@ -2929,7 +2929,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -2950,7 +2950,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -2985,7 +2985,7 @@ const handleAddCoupler = ()=> {
     setRedeCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="RED ELBOW" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:redeCost ,
       inches:redeInches
@@ -3048,7 +3048,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -3069,7 +3069,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -3104,7 +3104,7 @@ const handleAddCoupler = ()=> {
     setBrassfCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="BRASS FTA" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:brassfCost ,
       inches:brassfInches
@@ -3167,7 +3167,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -3188,7 +3188,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -3223,7 +3223,7 @@ const handleAddCoupler = ()=> {
     setBrasstCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="BRASS TEE" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:brasstCost ,
       inches:brasstInches
@@ -3286,7 +3286,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -3307,7 +3307,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -3342,7 +3342,7 @@ const handleAddCoupler = ()=> {
     setBrasseCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="BRASS ELBOW" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:brasseCost ,
       inches:brasseInches
@@ -3405,7 +3405,7 @@ const handleAddCoupler = ()=> {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
                  console.log(sl_no)
-               axios.delete(`http://localhost:3002/item/${data.item_name}/${sl_no}`)
+               axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
           .then(res=>{
@@ -3426,7 +3426,7 @@ const handleAddCoupler = ()=> {
         }
         if(flag===0){
           Earr.push(i)
-          axios.post("http://localhost:3002/item/itempost",{
+          axios.post("/item/itempost",{
             first_inches:data.first_inches,
             item_name:data.item_name,
             mm:data.mm,
@@ -3461,7 +3461,7 @@ const handleAddCoupler = ()=> {
     setRedmCost(e.target.value)
   }}></input>
   <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="RED MTA" onClick={(e)=>{
-    axios.post("http://localhost:3002/edit_itemadd",{
+    axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:redmCost ,
       inches:redmInches

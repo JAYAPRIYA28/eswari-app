@@ -7,7 +7,7 @@ function History() {
   console.log(data)
   const HistoryData = async() => {
     try{
-      const response = await fetch("http://localhost:3002/historyget")
+      const response = await fetch("/historyget")
       const responseData = await response.json();
 
       setData(responseData.data)
