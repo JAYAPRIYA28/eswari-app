@@ -55,5 +55,5 @@
     "postcss": "^8.4.16",
     "tailwindcss": "^3.1.8"
   },
-  "proxy": "http://app-ff801d3c-22a3-4f57-9b2e-985ff195b08e.cleverapps.io/"
+  "proxy": "http://localhost:3002"
 }
