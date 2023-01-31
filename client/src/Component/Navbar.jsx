@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../Eswari_pipe_logo.png'
 
 
@@ -13,7 +14,7 @@ function Navbar() {
   const [pipesDisplay, setPipeDisplay] = useState(false);
  
    var a = false;
-   console.log(window.innerWidth)
+  //  console.log(window.innerWidth)
    if(window.innerWidth === 1020 && a=== false){
     window.location.reload(false)
    }
@@ -61,7 +62,7 @@ function Navbar() {
         <button className=" peer flex md:flex  lg:bg-green-700 sm:bg-green-800 md:bg-green-800 lg:rounded-none sm:rounded-md lg:pt-0 sm:pt-1 sm:pb-1 lg:pb-0 sm:pl-3 lg:pl-0  block mt-4 lg:inline-block lg:flex lg:mt-0 text-white  lg:hover:text-green-600 " onClick={
           (e)=>{
            setFittingDisplay(!fittingDisplay)
-           console.log(fittingDisplay)
+          //  console.log(fittingDisplay)
           }
         } id="fitting">
       
@@ -79,16 +80,16 @@ function Navbar() {
         <div className='hidden lg:ml-20 sm:ml-0   peer-hover:flex peer-hover:mt-0 hover:flex
          flex-col ' for="fitting">
            <ul className="lg:absolute ">
-            <a href="http://localhost:3000/Finolex">
+            <Link to="./Finolex">
               <li className='lg:px-7 sm:px-5  lg:py-3 sm:py-5  lg:border-none sm:hover:border lg:hover:bg-gray-200  lg:bg-white sm:bg-green-700 lg:text-black sm:text-white drop-shadow-lg' >
               FinOlex
               </li>
-            </a>
-            <a href="http://localhost:3000/other">
+              </Link>
+              <Link to="./Other">
               <li className='lg:px-7 sm:px-5  lg:py-3 sm:py-5 lg:border-none sm:hover:border lg:hover:bg-gray-200  lg:bg-white sm:bg-green-700 lg:text-black sm:text-white  drop-shadow-lg'>
                Other
               </li>
-              </a>
+              </Link>
            </ul>
 
         </div>
@@ -111,11 +112,12 @@ function Navbar() {
         <div className='hidden lg:ml-44  peer-hover:flex peer-hover:mt-0  hover:flex
          flex-col ' for="pipes">
            <ul className="lg:absolute ">
-             <a href="http://localhost:3000/PVC">
+            <Link to="./PVC">
+            
               <li className='lg:px-8 sm:px-5  lg:py-3 sm:py-5  lg:border-none sm:hover:border lg:hover:bg-gray-200  lg:bg-white sm:bg-green-700 lg:text-black sm:text-white drop-shadow-lg' >
               PVC
               </li>
-              </a>
+              </Link>
               <li className='lg:px-7 sm:px-5  lg:py-3 sm:py-5 lg:border-none sm:hover:border lg:hover:bg-gray-200  lg:bg-white sm:bg-green-700 lg:text-black sm:text-white  drop-shadow-lg'>
                Finolex
               </li>
@@ -129,10 +131,11 @@ function Navbar() {
         }
         
         {display ? "" :
-        
-        <a href="/history" className="block sm:mt-2  lg:inline-block lg:ml-32 lg:mt-0 text-white lg:hover:text-green-600  lg:mr-28">
+        <Link to="../history">
+        <p className="block sm:mt-2  lg:inline-block lg:ml-32 lg:mt-0 text-white lg:hover:text-green-600  lg:mr-28">
          History
-        </a>
+        </p>
+        </Link>
         } 
         
       
@@ -141,10 +144,12 @@ function Navbar() {
     </div>
 
     {display ? "" :
- 
-    <a href='http://localhost:3000/billing' className='lg:mr-16 text-white pl-3 pt-1  sm:mt-3 lg:mt-0  border-zinc-300 w-20 h-10 border-2 hover:text-green-900 rounded-lg bg-green-800  text-lg' >
+    <Link to="./billing">
+    <p  className='lg:mr-16 text-white pl-3 pt-1  sm:mt-3 lg:mt-0  border-zinc-300 w-20 h-10 border-2 hover:text-green-900 rounded-lg bg-green-800  text-lg' >
         Billing
-       </a> 
+       </p> 
+
+       </Link>
        
 
     }

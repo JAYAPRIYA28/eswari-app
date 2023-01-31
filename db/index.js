@@ -11,6 +11,8 @@ const devConfig = {
    
 }
 
+// const devConfig = `postgresql://${process.env.POSTGRESQL_ADDON_USER}:${process.env.POSTGRESQL_ADDON_PASSWORD}@${process.env.POSTGRESQL_ADDON_HOST}:${process.env.POSTGRESQL_ADDON_PORT}/${process.env.POSTGRESQL_ADDON_DB}`
+
 const proConfig = {
   connectionString:process.env.POSTGRESQL_ADDON_URI
 }

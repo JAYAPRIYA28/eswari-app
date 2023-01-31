@@ -209,7 +209,7 @@ const[x, setX] = useState(
 const handleEntry = async(e) =>{
   try{
     const unique_id= e.target.name;
-    console.log(unique_id)
+    // console.log(unique_id)
     const  editChange = editCost;
     
      axios.post(`/item_change/${editChange}/${unique_id}`)
@@ -550,9 +550,7 @@ const handleAddCoupler = ()=> {
         id="free-solo-demo"
         freeSolo
         options={sData.map((option) => option.item_name)}
-        onChange={(e)=>{
-          console.log(e.target.options)
-        }}
+       
        
         renderInput={(params) => <TextField {...params
         } label="Search..." />}
@@ -563,7 +561,7 @@ const handleAddCoupler = ()=> {
   
 
 
-   <Link to="/Finolex/signin">
+   <Link to="./signin">
    <button className='font-bold  bg-sky-900 text-white lg:mt-4 sm:mt-0 w-32   h-10  border-solid rounded-xl border-4 border-light-blue-500 text-lg  opacity-100  '>Edit</button>
    </Link>
    </div>
@@ -611,7 +609,7 @@ const handleAddCoupler = ()=> {
               if (sarr[k] === i) {
                   sarr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -621,7 +619,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -648,7 +646,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(sarr)
+      //  console.log(sarr)
         }
       }/>
       
@@ -705,7 +703,7 @@ const handleAddCoupler = ()=> {
              if (Esarr[k] === i) {
                  Esarr.splice(k, 1);
                 var sl_no = i+1;
-                console.log(sl_no)
+                // console.log(sl_no)
               axios.delete(`/item/${data.item_name}/${sl_no}`)
               
               
@@ -715,7 +713,7 @@ const handleAddCoupler = ()=> {
          })
          .catch((err)=>{
            console.log(err.message);
-           console.log("hello")
+          //  console.log("hello")
          })
    
                 }
@@ -742,7 +740,7 @@ const handleAddCoupler = ()=> {
        }
 
       
-      console.log(Esarr)
+      // console.log(Esarr)
         }
       }/>
       
@@ -775,7 +773,7 @@ const handleAddCoupler = ()=> {
               if (arr[k] === i) {
                   arr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -785,7 +783,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -812,7 +810,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(arr)
+      //  console.log(arr)
       //  callArr(arr)
 
       //  setSArr(Oarr=>[...Oarr,arr])
@@ -905,7 +903,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -915,7 +913,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -942,7 +940,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1026,7 +1024,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -1036,7 +1034,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1063,7 +1061,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1108,7 +1106,7 @@ const handleAddCoupler = ()=> {
 <table className="table-auto  border-2 z-10">
 <thead>
     <tr className='border-2 bg-slate-400' >
-       <th>THE END CAP</th>
+       <th>TH. END CAP</th>
        <th></th>
        <th></th>
        <th></th>
@@ -1145,7 +1143,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/${data.item_name}/${sl_no}`)
                
                
@@ -1155,7 +1153,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1182,7 +1180,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1194,14 +1192,14 @@ const handleAddCoupler = ()=> {
   )
  }
  {TheaddItemEndcap ? <div className='flex'>
-  <p>THE END CAP</p>
+  <p>TH. END CAP</p>
   <input className='w-16 border-2 ml-5 pl-1' type="text" placeholder='inches' onChange={(e)=>{
     setTheEndcapInches(e.target.value)
   }} /><p>mm</p>
   <input className='w-16 border-2 ml-5 pl-1' placeholder='cost' onChange={(e)=>{
     setTheEndcapCost(e.target.value)
   }}></input>
-  <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="THE END CAP" onClick={(e)=>{
+  <button className='border-2 ml-3 pl-2 pr-2 bg-green-500' name="TH. END CAP" onClick={(e)=>{
     axios.post("/edit_itemadd",{
       name:e.target.name,
       cost:TheEndcapCost ,
@@ -1265,7 +1263,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -1275,7 +1273,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1302,7 +1300,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1384,7 +1382,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -1394,7 +1392,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1421,7 +1419,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1502,7 +1500,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -1512,7 +1510,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1539,7 +1537,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1621,7 +1619,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -1631,7 +1629,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1658,7 +1656,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1739,7 +1737,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -1749,7 +1747,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1776,7 +1774,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1858,7 +1856,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/${data.item_name}/${sl_no}`)
                
                
@@ -1868,7 +1866,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -1895,7 +1893,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -1977,7 +1975,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -1987,7 +1985,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2014,7 +2012,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2096,7 +2094,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2106,7 +2104,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2133,7 +2131,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2215,7 +2213,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2225,7 +2223,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2252,7 +2250,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2334,7 +2332,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2344,7 +2342,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2371,7 +2369,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2453,7 +2451,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2463,7 +2461,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2490,7 +2488,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2572,7 +2570,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2582,7 +2580,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2609,7 +2607,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2691,7 +2689,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2701,7 +2699,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2728,7 +2726,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2810,7 +2808,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2820,7 +2818,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2847,7 +2845,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -2928,7 +2926,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -2938,7 +2936,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -2965,7 +2963,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -3047,7 +3045,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -3057,7 +3055,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -3084,7 +3082,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -3166,7 +3164,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -3176,7 +3174,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -3203,7 +3201,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -3285,7 +3283,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -3295,7 +3293,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -3322,7 +3320,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>
@@ -3404,7 +3402,7 @@ const handleAddCoupler = ()=> {
               if (Earr[k] === i) {
                   Earr.splice(k, 1);
                  var sl_no = i+1;
-                 console.log(sl_no)
+                //  console.log(sl_no)
                axios.delete(`/item/${data.item_name}/${sl_no}`)
                
                
@@ -3414,7 +3412,7 @@ const handleAddCoupler = ()=> {
           })
           .catch((err)=>{
             console.log(err.message);
-            console.log("hello")
+            // console.log("hello")
           })
     
                  }
@@ -3441,7 +3439,7 @@ const handleAddCoupler = ()=> {
         }
 
        
-       console.log(Earr)
+      //  console.log(Earr)
         }
         
         }/>

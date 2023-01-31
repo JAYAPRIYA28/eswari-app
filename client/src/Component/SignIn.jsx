@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from './Navbar'
 import image from "../person-male.png";
 import { useState } from 'react';
-import {Link,useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 
 import axios from 'axios';
 
@@ -15,9 +15,9 @@ function SignIn() {
 
   const navigate = useNavigate()
   
-  var path;
+  // var path;
 
-  var flag=0 ;
+  // var flag=0 ;
   
 
   // if (element === email){
@@ -57,16 +57,16 @@ function SignIn() {
     }
   }
 
-console.log(flag)
+// console.log(flag)
 // if(flag === 2){
 //   <Alert/>
 // }
 
 
-console.log(path)
+// console.log(path)
 
-console.log(email)
-console.log(password)
+// console.log(email)
+// console.log(password)
 
 
 
@@ -90,9 +90,9 @@ console.log(password)
      <input className="lg:mt-12 sm:mt-20 pr-16 lm:pl-1 sm:pl-6  lg:pb-2 sm:pb-4  pt-2 border-2 border-black-600" name="password"  onChange={(e)=>{
         setPassword(e.target.value)
      }} type="password"></input><br/>
-     <Link to={path}>
+    
      <button className="font-bold bg-black text-white  lg:mt-8 sm:mt-10 lg:w-24 sm:w-40 sm:h-20 lg:ml-96 sm:ml-48 lg:h-14 text-center border-solid rounded-xl border-4 border-light-blue-500 lg:text-xl sm:text-4xl opacity-100" onClick={signinData} >sign In</button>
-     </Link>
+   
      </div>
      
      </section>

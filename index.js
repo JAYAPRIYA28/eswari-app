@@ -18,14 +18,16 @@ app.use(cors());
 
 app.use(express.json());
 
-// app.use(express.static(path.join(__dirname,"client/build")));
+// app.use(express.static(path.join(__dirname, "client/build")));
 
-app.use(express.static("./client/build"))
+app.use(express.static("./client/build"));
 
-// if(process.env.NODE_ENV === "production"){
+if(process.env.NODE_ENV === "production"){
+  app.use(express.static(path.join(__dirname, "client/build")));
+}
 
-//     app.use(express.static(path.join(__dirname,"client/build")));
-// }
+console.log(__dirname)
+console.log(path.join(__dirname, "client/build"))
 
 // console.log(__dirname);
 
@@ -109,7 +111,7 @@ app.get("/endcap", async function(req, res){
 
 app.get("/theendcap", async function(req, res){
     try{
-        const response = await db.query("SELECT * FROM finOlex WHERE item_name='THE END CAP' ORDER BY  sl_no ASC");
+        const response = await db.query("SELECT * FROM finOlex WHERE item_name='TH. END CAP' ORDER BY  sl_no ASC");
 
         res.status(200).json({
             data:response.rows
@@ -454,7 +456,7 @@ app.post("/item/itempost", async function(req, res){
 
 app.get("/item/itempost", async function(req, res){
     try{
-        const response = await db.query("SELECT * FROM craete_billing ORDER BY  id ASC");
+        const response = await db.query("SELECT * FROM craete_billing ORDER BY  unique_id ASC");
         
         res.status(200).json({
             data:response.rows
@@ -751,6 +753,9 @@ app.get("/pvcgetSecific/:nameitem", async function(req,res){
     }
 })
 
+app.get("*",(req, res)=> {
+    res.sendFile(path.join(__dirname,"client/build/index.html"))
+})
 
 
 app.listen(PORT, ()=>{
